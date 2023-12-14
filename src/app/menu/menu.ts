@@ -60,13 +60,6 @@ export const menu: CoreMenu[] = [
         icon: "circle",
         url: "level/list",
       },{
-        id: "add",
-        title: "Add",
-        translate: "MENU.APPS.LEVEL.ADD",
-        type: "item",
-        icon: "circle",
-        url: "level/add",
-      },{
         id: "edit",
         title: "Edit",
         translate: "MENU.APPS.LEVEL.EDIT",

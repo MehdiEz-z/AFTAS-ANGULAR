@@ -15,9 +15,9 @@ import { CoreSidebarModule } from "@core/components";
 
 // level
 import { LevelListComponent } from "./level-list/level-list.component";
-import { LevelAddComponent } from "./level-add/level-add.component";
 import { LevelEditComponent } from "./level-edit/level-edit.component";
 import { NewLevelSidebarComponent } from './level-list/new-level-sidebar/new-level-sidebar.component';
+import {LevelListService} from "./level-list/level-list.service";
 
 // routing
 const routes: Routes = [
@@ -27,10 +27,6 @@ const routes: Routes = [
         data: { animation: "LevelListComponent" },
     },
     {
-        path: "add",
-        component: LevelAddComponent,
-    },
-    {
         path: "edit",
         component: LevelEditComponent,
         data: { animation: "LevelEditComponent" },
@@ -38,7 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [LevelListComponent, LevelAddComponent, LevelEditComponent, NewLevelSidebarComponent],
+    declarations: [LevelListComponent, LevelEditComponent, NewLevelSidebarComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
@@ -52,6 +48,6 @@ const routes: Routes = [
         CoreDirectivesModule,
         CoreSidebarModule,
     ],
-    providers: [],
+    providers: [LevelListService],
 })
 export class LevelModule {}

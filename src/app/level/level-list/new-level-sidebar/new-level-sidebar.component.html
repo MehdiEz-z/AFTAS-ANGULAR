@@ -21,13 +21,13 @@
                                 type="text"
                                 class="form-control dt-description"
                                 id="basic-icon-default-description"
-                                placeholder="John Doe"
+                                placeholder="Enter Description"
                                 name="level-description"
                                 [(ngModel)]="description"
                                 [class.error]="newLevelForm.submitted && DescriptionRef.invalid"
                                 #DescriptionRef="ngModel"
                                 required
-                                aria-label="John Doe"
+                                aria-label="description"
                                 aria-describedby="basic-icon-default-description2"
                         />
                         <span *ngIf="newLevelForm.submitted && DescriptionRef.invalid" class="invalid-form">
@@ -40,8 +40,8 @@
                                         type="number"
                                         id="basic-icon-default-points"
                                         class="form-control dt-points"
-                                        placeholder="Web Developer"
-                                        aria-label="jdoe1"
+                                        placeholder="Enter Points"
+                                        aria-label="points"
                                         aria-describedby="basic-icon-default-points2"
                                         name="points"
                                         [(ngModel)]="points"

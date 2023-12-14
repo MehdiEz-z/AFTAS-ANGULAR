@@ -3,8 +3,7 @@ import { CoreSidebarService } from '@core/components/core-sidebar/core-sidebar.s
 
 @Component({
   selector: 'app-new-level-sidebar',
-  templateUrl: './new-level-sidebar.component.html',
-  styleUrls: ['./new-level-sidebar.component.scss']
+  templateUrl: './new-level-sidebar.component.html'
 })
 export class NewLevelSidebarComponent implements OnInit {
 

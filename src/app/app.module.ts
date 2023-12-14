@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   {
     path: "level",
     loadChildren: () =>
-        import("./level/level.module").then((m) => m.LevelModule),
+        import("./main/level/level.module").then((m) => m.LevelModule),
   },
   {
     path: '**',

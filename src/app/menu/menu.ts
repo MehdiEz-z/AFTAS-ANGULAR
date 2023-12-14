@@ -59,14 +59,7 @@ export const menu: CoreMenu[] = [
         type: "item",
         icon: "circle",
         url: "level/list",
-      },{
-        id: "edit",
-        title: "Edit",
-        translate: "MENU.APPS.LEVEL.EDIT",
-        type: "item",
-        icon: "circle",
-        url: "level/edit",
-      },
+      }
     ],
   },
   // fish

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
-import {environment} from "../../../environments/environment";
+import {environment} from "../../../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +28,14 @@ export class LevelListService implements Resolve<any>{
         this.rows = response;
         this.onLevelListChanged.next(this.rows);
         resolve(this.rows);
+      }, reject);
+    });
+  }
+
+  addRow(row): Promise<any[]>{
+    return new Promise((resolve, reject) => {
+      this._httpClient.post(environment.apiUrl + 'niveau/',row).subscribe((response: any) => {
+        resolve(response);
       }, reject);
     });
   }

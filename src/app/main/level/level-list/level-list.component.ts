@@ -4,8 +4,8 @@ import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { CoreConfigService } from '@core/services/config.service';
-import { CoreSidebarService } from '@core/components/core-sidebar/core-sidebar.service';
+import { CoreConfigService } from '../../../../@core/services/config.service';
+import { CoreSidebarService } from '../../../../@core/components/core-sidebar/core-sidebar.service';
 import { LevelListService} from "./level-list.service";
 
 @Component({

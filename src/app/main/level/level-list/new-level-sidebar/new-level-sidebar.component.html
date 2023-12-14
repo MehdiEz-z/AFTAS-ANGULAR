@@ -16,6 +16,25 @@
                 </div>
                 <div class="modal-body flex-grow-1">
                     <div class="form-group">
+                        <label class="form-label" for="basic-icon-default-points">Code</label>
+                        <input
+                                type="number"
+                                id="basic-icon-default-code"
+                                class="form-control dt-points"
+                                placeholder="Enter Code"
+                                aria-label="code"
+                                aria-describedby="basic-icon-default-points2"
+                                name="code"
+                                [(ngModel)]="code"
+                                [class.error]="newLevelForm.submitted && CodeRef.invalid"
+                                #CodeRef="ngModel"
+                                required
+                        />
+                        <span *ngIf="newLevelForm.submitted && CodeRef.invalid" class="invalid-form">
+                      <small class="form-text text-danger" *ngIf="CodeRef.errors.required">This field is required!</small>
+                    </span>
+                    </div>
+                    <div class="form-group">
                         <label class="form-label" for="basic-icon-default-description">Description</label>
                         <input
                                 type="text"

@@ -10,14 +10,6 @@ export const menu: CoreMenu[] = [
     icon: "home",
     url: "home",
   },
-  {
-    id: "sample",
-    title: "Sample",
-    translate: "MENU.SAMPLE",
-    type: "item",
-    icon: "file",
-    url: "sample",
-  },
   //Member
   {
     id: "member",
@@ -50,7 +42,7 @@ export const menu: CoreMenu[] = [
     title: "Level",
     translate: "MENU.APPS.LEVEL.COLLAPSIBLE",
     type: "collapsible",
-    icon: "level",
+    icon: "bar-chart-2",
     children: [
       {
         id: "list",
@@ -59,6 +51,14 @@ export const menu: CoreMenu[] = [
         type: "item",
         icon: "circle",
         url: "level/list",
+      },
+      {
+        id: "add",
+        title: "Add",
+        translate: "MENU.APPS.LEVEL.ADD",
+        type: "item",
+        icon: "circle",
+        url: "level/add",
       }
     ],
   },
@@ -68,7 +68,7 @@ export const menu: CoreMenu[] = [
     title: "Fish",
     translate: "MENU.APPS.FISH.COLLAPSIBLE",
     type: "collapsible",
-    icon: "level",
+    icon: "codesandbox",
     children: [
       {
         id: "list",
@@ -94,7 +94,7 @@ export const menu: CoreMenu[] = [
     title: "Competition",
     translate: "MENU.APPS.COMPETITION.COLLAPSIBLE",
     type: "collapsible",
-    icon: "level",
+    icon: "anchor",
     children: [
       {
         id: "list",
@@ -120,7 +120,7 @@ export const menu: CoreMenu[] = [
     title: "Hunting",
     translate: "MENU.APPS.HUNTING.COLLAPSIBLE",
     type: "collapsible",
-    icon: "level",
+    icon: "crosshair",
     children: [
       {
         id: "list",
@@ -146,7 +146,7 @@ export const menu: CoreMenu[] = [
     title: "Ranking",
     translate: "MENU.APPS.RANKING.COLLAPSIBLE",
     type: "collapsible",
-    icon: "level",
+    icon: "award",
     children: [
       {
         id: "list",

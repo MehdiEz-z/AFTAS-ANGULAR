@@ -5,16 +5,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreCommonModule } from '@core/common.module';
 
 import { ContentHeaderModule } from 'app/layout/components/content-header/content-header.module';
-
-import { SampleComponent } from './sample.component';
 import { HomeComponent } from './home.component';
 
 const routes = [
-  {
-    path: 'sample',
-    component: SampleComponent,
-    data: { animation: 'sample' }
-  },
   {
     path: 'home',
     component: HomeComponent,
@@ -23,8 +16,8 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [SampleComponent, HomeComponent],
+  declarations: [ HomeComponent],
   imports: [RouterModule.forChild(routes), ContentHeaderModule, TranslateModule, CoreCommonModule],
-  exports: [SampleComponent, HomeComponent]
+  exports: [HomeComponent]
 })
 export class SampleModule {}

@@ -1,5 +1,6 @@
 <div class="content-wrapper container-xxl p-0">
     <div class="content-body">
+        <app-content-header [contentHeader]="contentHeader"></app-content-header>
         <!-- Level List -->
         <section class="levels-list-wrapper">
             <div class="card">
@@ -29,9 +30,10 @@
                                     (keyup)="filterUpdate($event)"
                                     (search)="filterUpdate($event)"
                             /></label>
-                            <button class="btn btn-primary ml-1" rippleEffect (click)="toggleSidebar('new-level-sidebar')">
-                                <i data-feather="plus" class="d-sm-none d-inline-block mr-0 mr-sm-1"></i
-                                ><span class="d-none d-sm-inline-block">Add New Level</span>
+                            <button class="btn btn-primary ml-1" rippleEffect>
+                                <a routerLink="/level/add" class="text-white"
+                                ><i data-feather="plus" class="d-sm-none d-inline-block mr-0 mr-sm-1"></i
+                                ><span class="d-none d-sm-inline-block">Add New Level</span></a>
                             </button>
                         </div>
                     </div>
@@ -47,9 +49,23 @@
                         [scrollbarH]="true"
                 >
 
-                    <ngx-datatable-column name="Code" prop="code" [width]="50"></ngx-datatable-column>
+                    <ngx-datatable-column name="Code" prop="code" [width]="50">
+                        <ng-template let-code="value" ngx-datatable-cell-template>
+                            <div class="badge badge-light-info">
+                                <i data-feather="star" class="mr-25"></i>
+                                <span>{{code}}</span>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
                     <ngx-datatable-column name="Description" prop="description" [width]="500"></ngx-datatable-column>
-                    <ngx-datatable-column name="Points" prop="points" [width]="50"></ngx-datatable-column>
+                    <ngx-datatable-column name="Points" prop="points" [width]="50">
+                        <ng-template let-points="value" ngx-datatable-cell-template>
+                            <div class="badge badge-light-warning">
+                                <i data-feather="award" class="mr-25"></i>
+                                <span>{{points}}</span>
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
                     <ngx-datatable-column name="Actions" [width]="40" [sortable]="true">
                         <ng-template ngx-datatable-cell-template let-row="row">
                             <div ngbDropdown container="body">
@@ -57,11 +73,12 @@
                                     <span [data-feather]="'more-vertical'" [class]="'cursor-pointer'"></span>
                                 </button>
                                 <div ngbDropdownMenu>
-                                    <a routerLink="/apps/user/user-edit/{{ row.id }}" ngbDropdownItem
-                                ><span [data-feather]="'edit'" [size]="16" [class]="'mr-50'"></span> Edit</a
-                                ><a href="javascript:;" ngbDropdownItem
-                                ><span [data-feather]="'trash'" [size]="16" [class]="'mr-50'"></span> Delete</a
-                                >
+                                    <a class="text-warning text-darken-5" routerLink="/" ngbDropdownItem>
+                                        <span [data-feather]="'edit'" [size]="16" [class]="'mr-50'"></span> Edit
+                                    </a>
+                                    <a class="text-danger text-darken-5" href="javascript:;" ngbDropdownItem>
+                                        <span [data-feather]="'trash'" [size]="16" [class]="'mr-50'"></span> Delete
+                                    </a>
                                 </div>
                             </div>
                         </ng-template>
@@ -71,14 +88,4 @@
         </section>
         <!--/ User List -->
     </div>
-
-    <!-- New User Sidebar -->
-    <core-sidebar
-            class="modal modal-slide-in sidebar-todo-modal fade"
-            name="new-level-sidebar"
-            overlayClass="modal-backdrop"
-    >
-        <app-new-level-sidebar></app-new-level-sidebar>
-    </core-sidebar>
-    <!--/ New User Sidebar -->
 </div>
